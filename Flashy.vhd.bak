@@ -1,0 +1,30 @@
+-- Diseño de un controlador SPI para memoria Flash
+-- Lee y ejecuta las primeras 8 instrucciones dentro de la memoria Flash
+-- Autor: Rodrigo Alvarez
+
+library ieee;
+use ieee.std_logic_1164.all;
+-- OP    N2		N1
+-- 00 / 000 / 000
+-- Descripcion 
+-- Cada registro de la memoria flash es de 8 bits. 
+-- Se utilizarán 2 bits para los codigos de operacion
+-- 3 bits para el segundo numero
+-- 3 bits para el primer numero
+-- La salida será a los displays de 7 segmentos, en un formato hexadecimal
+-- Codigos:
+-- 00: Operacion AND entre ambos numeros --> AND W1, W2
+-- 01: Operacion OR entre ambos numeros --> OR W1, W2
+-- 10: Shift a la izquierda del numero 1, N veces (valor del numero 2) --> SL W1, #W2
+-- 11: 
+
+entity Flashy is
+	port (
+		clk, clr : in std_logic; -- Reloj y boton de reset
+		--leds_r: inout std_logic_vector(17 downto 0); -- Leds rojos
+		--leds_g: inout std_logic_vector(8 downto 0); -- Leds verdes
+		displays: inout std_logic_vector(55 downto 0) -- Displays 7 segmentos
+		-- Parte de la flash
+		
+	);
+end entity;

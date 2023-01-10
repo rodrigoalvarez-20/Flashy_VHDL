@@ -1,0 +1,9 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use work.displays.all;
+
+-- Paquete que contiene la logica de verificacion de codigo de operacion
+-- y ejecucion de la operacion dada
+
+package parser is
